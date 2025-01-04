@@ -1,0 +1,120 @@
+
+
+b{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#contact-me {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-me h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form Styles */
+#contact-me-form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 15px;
+}
+
+label {
+    font-size: 16px;
+    color: #555;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+input:focus, textarea:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    width: auto;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center;
+    
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.already-sent-contact{
+    background-color: indianred;
+}
+.already-sent-contact:hover{
+    background-color: red
+}
+
+/* Loader Style */
+#loader {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#loader img {
+    width: 30px;
+    height: 30px;
+}
+
+label, input, textarea {
+    margin-bottom: 10px; /* Add space between input fields and labels */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    #contact-me {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    #contact-me h2 {
+        font-size: 20px;
+    }
+
+    input, textarea {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    .already-sent-contact {
+        font-size: 16px;
+    }
+}
+
