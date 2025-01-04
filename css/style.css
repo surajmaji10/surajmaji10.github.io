@@ -257,7 +257,7 @@ h3:hover {
     transition: background-color 0.3s ease;
 }
 
-.hire-me {
+.hire-me, .contact-me {
     background-color: #ee9d2c;
     color: #f9f9f9;
     padding: 5px 5px;

@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hire</title>
-    <link rel="icon" href="./images/favicon-hire.ico" type="image/x-icon">
+    <title>Contact</title>
+    <link rel="icon" href="./images/email-favicon.ico" type="image/x-icon">
     <style>
 
         b{
             font-family: 'Courier New', Courier, monospace;
         }
 
-        #hire-me {
+        #contact-me {
             max-width: 600px;
             margin: 30px auto;
             padding: 20px;
@@ -21,7 +21,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        #hire-me h2 {
+        #contact-me h2 {
             text-align: center;
             font-size: 24px;
             margin-bottom: 20px;
@@ -29,7 +29,7 @@
         }
 
         /* Form Styles */
-        #hire-me-form {
+        #contact-me-form {
             display: flex;
             flex-direction: column;
             padding: 15px 15px;
@@ -75,10 +75,10 @@
             background-color: #45a049;
         }
 
-        .already-sent-hire{
+        .already-sent-contact{
            background-color: indianred;
         }
-        .already-sent-hire:hover{
+        .already-sent-contact:hover{
             background-color: red
         }
 
@@ -93,6 +93,7 @@
             width: 30px;
             height: 30px;
         }
+
         label, input, textarea {
             margin-bottom: 10px; /* Add space between input fields and labels */
         }
@@ -100,12 +101,12 @@
 
         /* Responsive Styles */
         @media (max-width: 600px) {
-            #hire-me {
+            #contact-me {
                 margin: 15px;
                 padding: 15px;
             }
 
-            #hire-me h2 {
+            #contact-me h2 {
                 font-size: 20px;
             }
 
@@ -119,7 +120,7 @@
                 padding: 10px 15px;
             }
 
-            .already-sent-hire {
+            .already-sent-contact {
                 font-size: 16px;
             }
         }
@@ -134,18 +135,18 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             // Check if user has already sent the message
-            if (localStorage.getItem('hireMessageSent') === 'true') {
+            if (localStorage.getItem('contactMessageSent') === 'true') {
                 // Hide the form and show success message
-                document.getElementById('hire-me-form').style.display = 'none';
+                document.getElementById('contact-me-form').style.display = 'none';
                 document.getElementById('loader').style.display = 'none';
                 document.getElementById('success-message').style.display = 'block';
             } else {
                 // Show the form
-                document.getElementById('hire-me-form').style.display = 'block';
+                document.getElementById('contact-me-form').style.display = 'block';
             }
 
             // Listen for the form submission
-            document.getElementById("hire-me-form").addEventListener("submit", function(event) {
+            document.getElementById("contact-me-form").addEventListener("submit", function(event) {
                 event.preventDefault();
 
                 // Show loader
@@ -164,7 +165,7 @@
                 // Get the form data
                 var formData = {
                     to_name: "Akash Maji",
-                    subject: "HIRING REQUEST",
+                    subject: "CONTACT QUERY",
                     from_name: document.getElementById("name").value,
                     from_email: document.getElementById("email").value,
                     message: message,
@@ -174,16 +175,16 @@
                 // Send the email directly using emailjs.send (use your template ID)
                 emailjs.send("service_akashmaji945", "template_xz6re3g", formData)
                     .then(function(response) {
-                        alert("SUCCESS: Hire Message Sent!");
+                        alert("SUCCESS: Contact Query Sent!");
                         // Save state in localStorage
-                        localStorage.setItem('hireMessageSent', 'true');
+                        localStorage.setItem('contactMessageSent', 'true');
                     }, function(error) {
                         alert("FAILED: Not Sent!");
                     })
                     .finally(function() {
                         // Hide loader after response is received
                         document.getElementById("loader").style.display = "none";
-                        document.getElementById("hire-me-form").style.display = "none";
+                        document.getElementById("contact-me-form").style.display = "none";
                         document.getElementById("success-message").style.display = "block";
                     });
             });
@@ -197,17 +198,17 @@
 
 </head>
 <body>
-    <section id="hire-me">
-        <h2 style="color: blueviolet;">Hire Akash Maji</h2>
+    <section id="contact-me">
+        <h2 style="color: blueviolet;">Contact Akash Maji</h2>
         
-        <form id="hire-me-form">
+        <form id="contact-me-form">
             <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
             
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
             
-            <label for="message">Message:</label>
+            <label for="message">Query:</label>
             <textarea id="message" name="message" placeholder="Tell me about your project or role offering" rows="4" required></textarea>
            
             <button type="submit">Submit</button>
@@ -215,8 +216,8 @@
         </form>
 
         <div id="success-message" style="text-align: center; display: none;">
-            <p>Hire Message has been sent!</p>
-            <button class="already-sent-hire" type="button" onclick="goHome()">Go to Home</button>
+            <p>Contact Query has been sent!</p>
+            <button class="already-sent-contact" type="button" onclick="goHome()">Go to Home</button>
         </div>
         
         <!-- Loader -->
