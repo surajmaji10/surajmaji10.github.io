@@ -266,7 +266,7 @@ h3:hover {
     border-radius: 5px;
     text-decoration: none;
     display: inline-block;
-    margin-top: 0px;
+    margin-top: 5px;
     transition: background-color 0.3s ease;
 }
 
@@ -323,3 +323,25 @@ section {
 .blue {
     color: blue;
 } */
+
+.view_more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.view_more a{
+    background-color: #b6b6b6f3;
+    color: #131212;
+    padding: 5px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view_more a:hover {
+    background-color: #5c5e5cba;
+}
