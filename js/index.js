@@ -27,3 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+function updateTime() {  
+    const now = new Date();  
+    const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };  
+    const timeString = now.toLocaleTimeString('en-US', options);  
+    document.getElementById('timeDisplay').innerText = `Current Time: ${timeString}`;  
+}  
+
+setInterval(updateTime, 1000); 
+
