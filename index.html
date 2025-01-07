@@ -25,19 +25,22 @@
     <body>
 
         <header>
-            <h1>Akash Maji</h1>
+           <a href="./index.html" style="text-decoration: none;"> <h1>Akash Maji</h1></a>
         </header>
 
         <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <a href="#study">Study</a>
-            <a href="#projects">Projects</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact</a>
+            <a class="see-me" href="#home">Home</a>
+            <a class="see-me" href="#about">About</a>
+            <a class="see-me" href="#education">Education</a>
+            <a class="see-me" href="#experience">Experience</a>
+            <a class="see-me" href="#study">Study</a>
+            <a class="see-me" href="#projects">Projects</a>
+            <a class="see-me" href="#achievements">Achievements</a>
+            <a class="see-me" href="#gallery">Gallery</a>
+            <a class="see-me" href="#contact">Contact</a>
+            <a class="hire-me" href="./resume.html">Resume</a>
             <a class="hire-me" href="./hire.html">Hire Me</a>
+            <a class="hire-me" href="./query.html">Enquire</a>
         </nav>
 
         <section id="home">
@@ -54,10 +57,14 @@
                             <p style="text-align: end; padding-right: 30px;">~ Steve Jobs</p>
                         </div>
                     </div>
-                    <p>
-                        I am a scholar at IISc Bangalore for M.Tech CS 2026. <br>
-                        I got AIR 26 in GATE CS 2024, and AIR 608 in GATE CS 2023. <br>
-                    </p>
+                    <div class="quote-item">
+                        <p>
+                            I am a <a href="https://www.csa.iisc.ac.in/people/akash-maji/" target="_blank">scholar</a> at IISc Bangalore for M.Tech CSE 2024-2026, <br>
+                            and a B.Tech CSE graduate from RGPV Bhopal. <br>
+                            I got AIR 26 in GATE CS 2024, and AIR 608 in GATE CS 2023, <br>
+                            and have a work experience of 2.5 years at TCS Indore. <br>
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -157,6 +164,33 @@
             </div>
         </section>
 
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <button class="go-to-top" onclick="scrollToTop()">Go to Top</button>
+            <div class="education-item">
+                <img src="./images/ocajp-logo.png" alt="OCAJP Logo">
+                <div>
+                    <strong>Oracle Certified Associate Java Programmer - I | 1Z0-808</strong><br>
+                    Oracle Corporation | Feb 2020 | Lifetime Validity<br>
+                    Certified in Java SE 8 Programming from Oracle.<br>
+                    <a href="https://www.credly.com/badges/6616ad47-2676-4e01-893c-20a4642a8b67" target="_blank">Verify Credentials&nbsp;&nbsp;</a>
+                    <a href="https://pdflink.to/akashmaji_ocajp/" target="_blank">&nbsp;&nbsp;See Certificate</a>
+                </div>
+                
+            </div>
+            <div class="education-item">
+                <img src="./images/azure-logo.jpg" alt="AZURE Logo">
+                <div>
+                    <strong>Microsoft Certified Azure Fundamentals | AZ-900</strong><br>
+                    Microsoft Corporation | July 2020 | Now Expired <br>
+                    Certified in basic cloud technology and tools from Microsoft.<br>
+                    <a href="https://www.credly.com/badges/2382975e-d741-4ec9-acca-5d8237bbc515" target="_blank">Verify Credentials&nbsp;&nbsp;</a>
+                    <a href="https://pdflink.to/akashmaji_azure/" target="_blank">&nbsp;&nbsp;See Certificate</a>
+                </div>
+                
+            </div>
+        </section>
+
         <section id="gallery">
             <h2>Gallery</h2>
             <button class="go-to-top" onclick="scrollToTop()">Go to Top</button>
@@ -165,6 +199,11 @@
                 <img src="./images/gall-2.jpg" alt="Placeholder Image">
                 <img src="./images/gall-3.jpg" alt="Placeholder Image">
                 <img src="./images/gall-4.png" alt="Placeholder Image">
+            </div>
+            <div>
+                <div class="view_more">
+                    <a href="./gallery.html">View More</a>
+                </div>
             </div>
         </section>
 
@@ -183,7 +222,7 @@
                     </div>
                     <div class="contact-item">
                         <img src="./images/call-icon.png" width="20px;" alt="Phone Icon">
-                        <a href="tel:+919131697371">+91-91316-97371</a>
+                        <a href="tel:+919131697371">Call</a>
                     </div>
                     <div class="contact-item">
                         <img src="./images/whatsapp-logo.png" width="20px;" alt="WhatsApp Icon">
@@ -202,13 +241,13 @@
                         <a href="https://github.com/akashmaji946" target="_blank">GitHub</a>
                     </div>
                     <div class = "contact-item">
-                        <a class="hire-me" href="./query.html">Post Query</a>
+                        <!-- <a class="hire-me" href="./query.html">Post Query</a> -->
                     </div>
                 </div>
                 <div>
                     <div class="qr-container">
-                        <img src="./images/qrcode.png" width="100px;" alt="QR Code">
-                        <p>Scan to connect!</p>
+                        <img src="./images/qrcode.png" width="200px;" alt="QR Code">
+                        <p class="">Scan to Chat!</p>
                     </div>
                     <!-- <div>
                         <a class="hire-me" href="./query.html">Post Query</a>
@@ -221,7 +260,8 @@
 
 
         <footer>
-            <p>&copy; 2025 Akash Maji. All rights reserved.</p>
+            <p><b>&copy; 2025 Akash Maji. All rights reserved.</b></p>
+            <p>Last Updated: January, 2025</p>
             <button class="go-to-bottom" onclick="scrollToBottom()">Go to Bottom</button>
         </footer>
     </body>

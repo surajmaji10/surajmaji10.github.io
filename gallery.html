@@ -1,0 +1,73 @@
+<style>
+    .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    border: 3px solid black;
+    margin-bottom: 10px;
+    }
+
+    .gallery img {
+        width: 350px;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .view_more{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-family: 'Oswald', sans-serif;
+        font-size: 16px;
+    }
+    .view_more a{
+        background-color: #81c2e5f3;
+        color: #131212;
+        padding: 10px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        margin-top: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .view_more a:hover {
+        background-color: #2ca8ebf3;
+    }
+
+    section {
+        padding: 30px;
+        max-width: 900px;
+        margin: auto;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+</style>
+<section>
+    <div>
+        <div class="view_more">
+            <a href="./index.html">Go To Home</a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="./images/gall-1.jpg" alt="Placeholder Image">
+        <img src="./images/gall-2.jpg" alt="Placeholder Image">
+        <img src="./images/gall-3.jpg" alt="Placeholder Image">
+        <img src="./images/gall-4.png" alt="Placeholder Image">
+    </div>
+</section>
+<!-- <div class="gallery">
+    <img src="./images/gall-1.jpg" alt="Placeholder Image">
+    <img src="./images/gall-2.jpg" alt="Placeholder Image">
+    <img src="./images/gall-3.jpg" alt="Placeholder Image">
+    <img src="./images/gall-4.png" alt="Placeholder Image">
+</div> -->

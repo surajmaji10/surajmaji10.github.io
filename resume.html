@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resume</title>
+</head>
+<style>
+    .pdf {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+
+    .pdf,
+    html,
+    body {
+        height: 90%;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1,
+    h3 {
+        text-align: center;
+    }
+
+    h1 {
+        color: green;
+    }
+
+    button, a {
+    width: auto;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    }
+
+    button, a:hover {
+        background-color: #45a049;
+    }
+
+    .resume_buttons, a {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    /* a {
+        text-decoration: none;
+        font-family: 'Oswald', sans-serif;
+    } */
+
+
+</style>
+
+<script>
+    function goHome() {
+        window.location.href = 'index.html';
+    }
+</script>
+
+<body>
+
+    <h1>Resume</h1>
+    <h3>Akash Maji</h3>
+    <div class="resume_buttons">
+        <a href="./files/Akash_Maji_Resume_2025.pdf" download>Download</a>
+        <button style="background-color: red;" onclick="goHome()">Exit</button>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; height: 90%; padding: 0 20%;">
+        <iframe src="https://pdflink.to/akashmaji-resume/embed/" frameborder="0" style="border: none; height: 90%; width: 100%;"></iframe>
+    </div>
+</body>
+<footer style="text-align: center;">
+    <p>&copy; 2025 Akash Maji. All rights reserved.</p>
+</footer>
+
+</html>
