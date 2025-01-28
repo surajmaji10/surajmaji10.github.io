@@ -265,7 +265,7 @@ h3:hover {
 }
 
 .hire-me, .see-me {
-    background-color: #b6b6b6f3;
+    background-color: #dbdbdb;
     color: #131212;
     padding: 5px 5px;
     border-radius: 5px;
@@ -277,7 +277,7 @@ h3:hover {
 }
 
 .see-me {
-    background-color: #dad8d8f3;
+    background-color: #eee9e9f3;
 }
 
 .go-to-top:hover {
@@ -376,3 +376,31 @@ section {
 .qr-container p {  
     margin-top: 10px;  
 } 
+
+.project-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-item h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.project-item p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.project-item a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.project-item a:hover {
+    text-decoration: underline;
+}
