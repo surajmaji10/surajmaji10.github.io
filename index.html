@@ -6,8 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Akash Maji</title>
 
-         <!-- Favicon -->
-    <link rel="icon" href="./images/blue-favicon.ico" type="image/x-icon">
+        <!-- Favicon -->
+        <link rel="icon" href="./images/blue-favicon.ico" type="image/x-icon">
+
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +16,18 @@
 
         <!-- CSS Styles -->
         <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/chatbot.css">
 
-        <!-- JS Scripts -->
+        <!-- JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.15.0/flowchart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+        <!-- Main Scripts -->
         <script src="./js/index.js"></script>
-        
-
+        <script src="./js/chatbot.js" defer></script> <!-- ✅ Defer to ensure DOM is loaded before execution -->
     </head>
+
 
     <body onload="updateTime()">
 
@@ -298,9 +305,40 @@
                         <a class="hire-me" href="./query.html">Post Query</a>
                     </div> -->
                 </div>
+                <div>
+                    <div>
+                        <!-- Floating Chat Icon -->
+                <div id="chatbot-icon">💬</div>
+                <!-- Chatbot Container -->
+                <div id="chatbot-container" class="hidden">
+                <div id="chatbot-header">
+                    <span>AI Chatbot</span>
+                    <button id="close-btn">Close</button>
+                    <button id="expand-btn" onclick="openChatbot()">New Tab</button>
+            
+                </div>
+                <div id="chatbot-body">
+                    <div id="chatbot-messages"></div>
+                </div>
+                <div id="chatbot-input-container">
+                    <input type="text" id="chatbot-input" placeholder="Type a message..." />
+                    <button id="send-btn">➤</button>
+                </div>
+                </div>
+    
+            </div>
+                </div>
+
+                <div>
+                    
+                </div>
                 
             </div>
         </section>
+
+
+
+        
 
 
 

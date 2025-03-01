@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="css/chatbot.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.15.0/flowchart.min.js"></script>
+    <script type="module">
+        import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+  </head>
+  <body>
+    <h1 style="font-family: 'Arial', sans-serif; color: #1e88e5; text-align: center; margin-top: 20px; font-size: 3em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+        AI Chatbot
+    </h1>
+    <h2 style="font-family: 'Arial', sans-serif; color: #555; text-align: center; margin-top: 10px; font-size: 1.5em;">
+        Click on icon to chat with the bot
+    </h2>
+    <!-- Floating Chat Icon -->
+    <div id="chatbot-icon" style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: #1e88e5; color: white; font-size: 30px; display: flex; justify-content: center; align-items: center; border-radius: 50%; box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); cursor: pointer; transition: transform 0.2s, background-color 0.2s;">💬</div>
+    <!-- Chatbot Container -->
+    <div id="chatbot-container" class="hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #1f1f1f; display: flex; flex-direction: column; overflow: hidden;">
+      <div id="chatbot-header" style="background-color: #1e88e5; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-size: 18px;">
+        <span>Gemini Chatbot</span>
+        <button id="close-btn" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer;">Close</button>
+      </div>
+      <div id="chatbot-body" style="flex: 1; padding: 0px; overflow-y: auto;">
+        <div id="chatbot-messages" style="display: flex; flex-direction: column;"></div>
+      </div>
+      <div id="chatbot-input-container" style="display: flex; padding: 10px; border-top: 1px solid #444; background-color: #2c2c2c;">
+        <input type="text" id="chatbot-input" placeholder="Type a message..." style="flex: 1; padding: 10px; border: 1px solid #444; border-radius: 10px; background-color: #333; color: white;" />
+        <button id="send-btn" style="padding: 10px 15px; background-color: #1e88e5; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; margin-left: 10px;">➤</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/chatbot.js"></script>
+  </body>
+</html>
