@@ -97,7 +97,7 @@ body {
     padding: 10px 20px; /* Increased padding for larger message box */
     border-radius: 8px;
     max-width: 80%;
-    font-size: 18px; /* Increased text size */
+    /* font-size: 16px;  */
 }
 
 .message.user {
@@ -132,7 +132,7 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    /* font-size: 14px; */
     margin-left: 10px; /* Add margin-right to create space between the button and input */
 }
 
@@ -147,7 +147,7 @@ body {
     border-radius: 10px;
     background-color: #333;
     color: white;
-    font-size: 18px; /* Increased text size */
+    font-size: 16px; /* Increased text size */
 }
 
 /* Media Queries for Mobile Responsiveness */
