@@ -28,12 +28,51 @@
         <script src="./js/chatbot.js" defer></script> <!-- ✅ Defer to ensure DOM is loaded before execution -->
     </head>
 
+    <style>
+
+        :root {
+            --background-color: #ffffff;
+            --text-color: #000000;
+        }
+
+        [data-theme="dark"] {
+            --background-color: #121212;
+            --text-color: #ffffff;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .theme-switcher {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 8px 12px;
+            font-size: 14px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .theme-switcher:hover {
+            background-color: #45a049;
+        }
+    </style>
+
 
     <body onload="updateTime()">
-
         <header>
-           <a href="./index.html" style="text-decoration: none;"> <h1>Akash Maji</h1></a>
-           <!-- <p id="timeDisplay">Current Time: 09:56:03 AM</p> -->
+            <a href="./index.html" style="text-decoration: none;">
+                <h1>Akash Maji</h1>
+            </a>
+            <!-- <button class="theme-switcher" onclick="toggleTheme()">Switch Theme</button> -->
         </header>
 
         <nav>
@@ -43,6 +82,7 @@
             <a class="see-me" href="#experience">Experience</a>
             <a class="see-me" href="#study">Study</a>
             <a class="see-me" href="#projects">Projects</a>
+            <a class="see-me" href="#reports">Reports</a>
             <a class="see-me" href="#achievements">Achievements</a>
             <a class="see-me" href="#gallery">Gallery</a>
             <a class="see-me" href="#contact">Contact</a>
@@ -65,8 +105,18 @@
                             <p style="text-align: end; padding-right: 30px;">~ Steve Jobs</p>
                         </div>
                     </div>
-                    <div class="quote-item">
-                        <p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About</h2>
+            <button class="go-to-top" onclick="scrollToTop()">Go to Top</button>
+
+            <div class="education-item" style="display: flex;">
+                       <img src="./images/iisc-logo-2.jpg" alt="University Logo">
+                       <div>
+                         <p>
                             I am a <a href="https://www.csa.iisc.ac.in/people/akash-maji/" target="_blank">scholar</a> at <a href="https://iisc.ac.in/">IISc Bangalore</a>
                             pursuing M.Tech in CSE 2024-2026, <br>
                             in the department of <a href="https://www.csa.iisc.ac.in/">CSA</a> (Computer Science and Automation) <br>
@@ -76,14 +126,16 @@
                             I got AIR 26 in GATE CS 2024, and AIR 608 in GATE CS 2023 <br>
                             <br>
                         </p>
-                    </div>
-                </div>
+                       </div>
+                       
+                    
             </div>
-        </section>
+            <div class = "display-item">
+                <img src="./images/csa-dept.jpg" alt="CSA Dept Pic">
+                <img src="./images/csa-logo.png" alt="CSA Dept Logo">
+                <img src="./images/serc.webp" alt="CDS Dept Pic">
+            </div>
 
-        <section id="about">
-            <h2>About</h2>
-            <button class="go-to-top" onclick="scrollToTop()">Go to Top</button>
             <div class="about-item">
                 <p>Hello! I'm Akash Maji, a passionate learner and dedicated professional 
                     with interests in technology and creativity.</p>
@@ -205,6 +257,21 @@
                 <p><em>2024 | Bangalore, IN</em></p>
                 <p>Used 'perf mem' tool to obtain a sampled report of TLB misses at different logical addresses, and identified top N TLB-miss regions and allocated large pages to improve performance.</p>
                 <p><strong>Technologies Used:</strong> C|C++ &bull; Python &bull; Git &bull; Make &bull; VSCode</p>
+            </div>
+        </section>
+
+        <section id="report">
+            <h2>Reports</h2>
+            <div class="report-item">
+                <div>
+                <p>Akash Maji, Utkarsh Sharma</p>
+                <a href="reports/DuckDB_AMUS_Join_Report.pdf">DuckDB AMUS Join: A new Join Operator implementation</a>
+                </div>
+            </div>
+            <hr>
+            <div class="report-item">
+               <p>Akash Maji, Utkarsh Sharma, Suraj Reddy, Amandeep Nokhwal</p>
+                <a href="reports/CNN_Memory_Profiling_And_Optimisation_Report.pdf">CNN Memory Profiling and Optimisation: Toward Efficient Inference</a>
             </div>
         </section>
 
@@ -361,5 +428,18 @@
             <p id="timeDisplay">Current Time: 09:56:03 AM</p>
             <button class="go-to-bottom" onclick="scrollToBottom()">Go to Bottom</button>
         </footer>
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
     </body>
 </html>
