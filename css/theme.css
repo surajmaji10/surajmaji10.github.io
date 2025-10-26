@@ -144,3 +144,18 @@ img{max-width:100%;height:auto;border-radius:8px}
 /* Make images inside gallery behave as tiles visually */
 .gallery img.tile{border-radius:8px}
 
+/* Background particle canvas styling */
+#bg-canvas{
+  position: fixed;
+  inset: 0;
+  z-index: 0; /* behind content */
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Ensure main content stacks above the canvas */
+body > *:not(#bg-canvas){
+  position: relative;
+  z-index: 1;
+}
+
