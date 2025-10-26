@@ -25,7 +25,9 @@
 
         <!-- Main Scripts -->
         <script src="./js/index.js"></script>
-        <script src="./js/chatbot.js" defer></script> <!-- ✅ Defer to ensure DOM is loaded before execution -->
+    <script src="./js/chatbot.js" defer></script> <!-- ✅ Defer to ensure DOM is loaded before execution -->
+        <script src="./js/tiles.js" defer></script>
+            <script src="./js/particles.js" defer></script>
     </head>
 
     <style>
@@ -64,13 +66,36 @@
         .theme-switcher:hover {
             background-color: #45a049;
         }
+        /* typesetter (typing) styles */
+        #name-typer { 
+            font-family: 'Oswald', Arial, sans-serif;
+            font-size: 2.5rem;
+            margin: 0;
+            display: inline-block;
+            position: relative;
+            min-width: 10ch; /* prevents layout jump */
+            height: 1.2em;
+        }
+        #typer-text { white-space: nowrap; display: inline-block; }
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.5em;
+            background: currentColor;
+            margin-left: 6px;
+            vertical-align: bottom;
+            animation: blink 1s steps(2, start) infinite;
+        }
+        @keyframes blink { 0%,50% { opacity: 1; } 51%,100% { opacity: 0; } }
     </style>
 
 
     <body onload="updateTime()">
         <header>
-            <a href="./index.html" style="text-decoration: none;">
-                <h1>Akash Maji</h1>
+            <a href="./index.html" style="text-decoration: none; color: inherit;">
+                <h1 id="name-typer" aria-live="polite">
+                    <span id="typer-text">Akash</span><span class="cursor"></span>
+                </h1>
             </a>
             <!-- <button class="theme-switcher" onclick="toggleTheme()">Switch Theme</button> -->
         </header>
@@ -84,7 +109,7 @@
             <a class="see-me" href="#projects">Projects</a>
             <a class="see-me" href="#reports">Reports</a>
             <a class="see-me" href="#achievements">Achievements</a>
-            <a class="see-me" href="#gallery">Gallery</a>
+            <!-- <a class="see-me" href="#gallery">Gallery</a> -->
             <a class="see-me" href="#contact">Contact</a>
             <a class="hire-me" href="./resume.html">Resume</a>
             <a class="hire-me" href="./hire.html">Hire Me</a>
@@ -101,8 +126,10 @@
                 <div style="padding-left: 20px;">
                     <div class="quote-item">
                         <div>
-                            <p>“The only way to do great work is to love what you do.”</p>
-                            <p style="text-align: end; padding-right: 30px;">~ Steve Jobs</p>
+                            <p style="font-size:1.05rem;">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन |</p>
+                            <p style="margin-top:6px;">(Karmaṇy-evādhikāras te mā phaleṣu kadācana)</p>
+                            <p style="margin-top:8px;">"You have a right to perform your prescribed duties, <br>but you are not entitled to the fruits of your actions."</p>
+                            <p style="font-style:italic; margin-top:6px;">— Bhagavad Gita, Chapter 2, Verse 47</p>
                         </div>
                     </div>
                 </div>
@@ -211,14 +238,14 @@
             <h2>Study</h2>
             <button class="go-to-top" onclick="scrollToTop()">TOP</button>
             
-            <div class="study-item">
+            <div class="project-item">
                 <h3>Undergraduate</h3>
-                <p>Operating Systems | Databases | Computer Networks | Computer Organization | Digital Logic Design | Discrete Math | Compiler Design | Theory of Computation</p>
+                <p>Operating Systems | Database Management Systems | Computer Networks | Computer Organization | Digital Logic Design | Discrete Mathematics | Compiler Design | Theory of Computation | C/C++ System Programming | Linux/UNIX | Object Oriented Programming</p>
             </div>
             
-            <div class="study-item">
+            <div class="project-item">
                 <h3>Graduate</h3>
-                <p>Algorithms | Probability and Statistics | Databases | Computer Architecture | Optimizations | Machine Learning | Cryptography | Distributed Systems</p>
+                <p>Algorithms | Probability and Statistics | Databases | Computer Architecture | Optimizations | Machine Learning | Systems for Machine Learning | Cryptography | Distributed Systems | Graphics and Visualization | Computer Systems Security</p>
             </div>
         </section>
 
@@ -227,8 +254,46 @@
             <button class="go-to-top" onclick="scrollToTop()">TOP</button>
 
             <div class="project-item">
+                <h3>VM-Diffing-Tool (VMTOOL)</h3>
+                <p><strong>Computer Systems Security Course Project</strong> |
+                    <a href="https://github.com/akashmaji946/VM-Diffing-Tool" target="_blank" rel="noopener">GitHub</a> |
+                    <a href="https://akashmaji946.github.io/VM-Diffing-Tool/" target="_blank" rel="noopener">Docs</a> |
+                    <a href="https://github.com/akashmaji946/VM-Diffing-Tool/releases">Releases</a>
+                </p>
+                <p><em>2025 | Bangalore, IN</em></p>
+                <p>
+                    A powerful tool for analyzing and comparing VM disk images. Built with Flask and a C++ core (pybind11)
+                    that uses libguestfs for robust disk access. Features file browsing, side‑by‑side file diffs,
+                    directory and block comparisons, image conversion, VM launch utilities, and exportable JSON/PDF reports. Supports web-based and CLI (vmt) interfaces.
+                </p>
+                <p><strong>Technologies Used:</strong> Python (Flask) • C++ (pybind11) • libguestfs • Docker • SQLite </p>
+
+                <p></p>
+            </div>
+
+
+                <div class="project-item">
+                <h3>Medical Volume Renderer (MVR)</h3>
+                <p>
+                    <strong>Interactive 3D Volume Renderer</strong> |
+                    <a href="https://github.com/akashmaji/MedicalVolumeRenderer" target="_blank" rel="noopener">GitHub</a> |
+                    <a href="https://github.com/akashmaji/MedicalVolumeRenderer/releases" target="_blank" rel="noopener">Releases </a> |
+                    <a href="https://hub.docker.com/r/akashmaji/renderer-v0" target="_blank" rel="noopener">Docker image</a>
+                </p>
+                <p><em>2023–2025 | Bangalore, IN</em></p>
+                <p>
+                    Lightweight OpenGL-based 3D volume renderer with a compact PyQt6 UI. Loads medical and scientific volumes
+                    (NIfTI: .nii/.nii.gz, DICOM: .dcm, VTK: .vtk) and supports GPU-accelerated volume rendering, slice/slicer view,
+                    isosurface rendering, custom & interactive transfer functions, overlays/annotations, and saving/exporting images.
+                    Distributed as a standalone Linux binary and shared library. Docker image available for easy deployment.
+                </p>
+                <p><strong>Technologies Used:</strong> C++ • OpenGL • Python • PyQt6 • pybind11 • VTK • DCMTK • Docker • NIfTI</p>
+            </div>
+            </div>
+
+            <div class="project-item">
                 <h3>Market Microservice</h3>
-                <p><strong>PODS Course Project</strong> | <a href="https://github.com/akashmaji946/PODS-Project-2-Phase-2-v1/tree/docker" target="_blank">GitHub</a></p>
+                <p><strong>Distributed Systems Course Project</strong> | <a href="https://github.com/akashmaji946/PODS-Project-2-Phase-2-v1/tree/docker" target="_blank">GitHub</a></p>
                 <p><em>2024 | Bangalore, IN</em></p>
                 <p>Implemented three microservices (account-service, marketplace-service, wallet-service) using a dockerized Akka cluster. These services handle concurrent RESTful requests through a CLI interface while maintaining consistency and correctness.</p>
                 <p><strong>Technologies Used:</strong> Java 21 &bull; Spring Boot 3 &bull; Akka Library &bull; Docker &bull; Kubernetes &bull; IntelliJ &bull; Git</p>
@@ -237,7 +302,7 @@
             
             <div class="project-item">
                 <h3>DuckDB</h3>
-                <p><strong>DBMS Course Project</strong> | <a href="https://github.com/akashmaji946/myduckdb/" target="_blank">GitHub</a></p>
+                <p><strong>Database Systems Course Project</strong> | <a href="https://github.com/akashmaji946/myduckdb/" target="_blank">GitHub</a></p>
                 <p><em>2024 | Bangalore, IN</em></p>
                 <p>Implemented two operators, 'Join' and 'GroupJoin' in the open-source DuckDB source-code, with 'Join' being simple nested loop join, and 'GroupJoin' being used when we have any 'join' followed by 'group by' in the query.</p>
                 <p><strong>Technologies Used:</strong> C++ &bull; CMake &bull; Git &bull; SQL &bull; VSCode</p>
@@ -245,7 +310,7 @@
             
             <div class="project-item">
                 <h3>ChampSim-IISc</h3>
-                <p><strong>HPCA Course Project</strong> | <a href="https://github.com/akashmaji946/ChampSim-IISc/" target="_blank">GitHub</a></p>
+                <p><strong>Computer Architecture Course Project</strong> | <a href="https://github.com/akashmaji946/ChampSim-IISc/" target="_blank">GitHub</a></p>
                 <p><em>2024 | Bangalore, IN</em></p>
                 <p>ChampSim-IISc is an adapted version of ChampSim (open-source simulator) with various kinds of branch predictors implemented for calculating performance metrics like prediction accuracy, MPKI, IPC etc. from program traces.</p>
                 <p><strong>Technologies Used:</strong> C|C++ &bull; Shell Scripting &bull; Git &bull; VSCode</p>
@@ -253,61 +318,33 @@
             
             <div class="project-item">
                 <h3>Large Page Allocator</h3>
-                <p><strong>HPCA Course Project</strong> | <a href="https://github.com/akashmaji946/HPCA-Assignment-02/" target="_blank">GitHub</a></p>
+                <p><strong>Computer Architecture Course Project</strong> | <a href="https://github.com/akashmaji946/HPCA-Assignment-02/" target="_blank">GitHub</a></p>
                 <p><em>2024 | Bangalore, IN</em></p>
                 <p>Used 'perf mem' tool to obtain a sampled report of TLB misses at different logical addresses, and identified top N TLB-miss regions and allocated large pages to improve performance.</p>
                 <p><strong>Technologies Used:</strong> C|C++ &bull; Python &bull; Git &bull; Make &bull; VSCode</p>
             </div>
         </section>
 
-        <!-- <section id="reports">
-            <h2>Reports</h2>
-            <button class="go-to-top" onclick="scrollToTop()">TOP</button>
-
-            <div class="report-item">
-               <p>June 2025 | Akash Maji</p>
-                <a class="external" href="reports/GroupJoin_Report_Akash.pdf">Implementing the GroupJoin in DuckDB
-                    <img src="images/external.jpg" alt="external link" style="width:20px; vertical-align:middle; margin-left:4px;">
-                </a>
-            </div>
-            <hr>
-            <div class = "report-item">
-                <p>December 2024 | Akash Maji, Utkarsh Sharma</p>
-                <a class="external" href="reports/DuckDB_AMUS_Join_Report.pdf">DuckDB AMUS Join: A new Join Operator implementation
-                    <img src="images/external.jpg" alt="external link" style="width:20px; vertical-align:middle; margin-left:4px;">
-                </a>
-                </div>
-            </div>
-            <hr>
-            <div class="report-item">
-               <p>April 2025 | Akash Maji, Utkarsh Sharma, Suraj Reddy, Amandeep Nokhwal</p>
-                <a class="external" href="reports/CNN_Memory_Profiling_And_Optimisation_Report.pdf">CNN Memory Profiling and Optimisation: Toward Efficient Inference
-                    <img src="images/external.jpg" alt="external link" style="width:20px; vertical-align:middle; margin-left:4px;">
-                </a>
-            </div>
-            <hr>
-        </section> -->
-
         <!-- Attractive Reports Section -->
         <section id="reports">
             <h2>Reports</h2>
             <button class="go-to-top" onclick="scrollToTop()">TOP</button>
             <div class="reports-list">
-                <div class="report-item">
+                <div class="project-item">
                     <p class="report-meta">June 2025 | <span>Akash Maji</span></p>
                     <a class="external" href="reports/GroupJoin_Report_Akash.pdf" target="_blank">
                          <img src="images/external.jpg" alt="external link" style="width:20px; vertical-align:middle; margin-left:4px;">
                         <span>Implementing the GroupJoin in DuckDB</span>
                         </a>
                 </div>
-                <div class="report-item">
+                <div class="project-item">
                     <p class="report-meta">December 2024 | <span>Akash Maji &bull; Utkarsh Sharma</span></p>
                     <a class="external" href="reports/DuckDB_AMUS_Join_Report.pdf" target="_blank">
                         <img src="images/external.jpg" alt="external link" style="width:20px; vertical-align:middle; margin-left:4px;">
                         <span>DuckDB AMUS Join: A new Join Operator implementation</span>
                     </a>
                 </div>
-                <div class="report-item">
+                <div class="project-item">
                     <p class="report-meta">April 2025 | <span>Akash Maji &bull; Utkarsh Sharma &bull; Suraj Reddy &bull; Amandeep Nokhwal</span></p>
                     <a class="external" href="reports/CNN_Memory_Profiling_And_Optimisation_Report.pdf" target="_blank">
                         <img src="images/external.jpg" alt="external link" style="width:20px; vertical-align:middle; margin-left:4px;">
@@ -367,21 +404,22 @@
             </div>
         </section>
 
-        <section id="gallery">
+        <!-- <section id="gallery">
             <h2>Gallery</h2>
             <button class="go-to-top" onclick="scrollToTop()">TOP</button>
             <div class="gallery">
-                <!-- <img src="./images/gall-1.jpg" alt="Placeholder Image">
+                <img src="./images/gall-1.jpg" alt="Placeholder Image">
                 <img src="./images/gall-2.jpg" alt="Placeholder Image">
                 <img src="./images/gall-3.jpg" alt="Placeholder Image">
-                <img src="./images/gall-4.png" alt="Placeholder Image"> -->
+                <img src="./images/gall-4.png" alt="Placeholder Image">
             </div>
             <div>
                 <div class="view_more">
                     <a href="./gallery.html">View More</a>
                 </div>
             </div>
-        </section>
+        </section> 
+    -->
 
         <section id="contact">
             <h2>Contact</h2>
@@ -462,13 +500,10 @@
 
 
 
-        
-
-
-
+    
         <footer>
             <p><b>&copy; 2025 Akash Maji. All rights reserved.</b></p>
-            <p>Last Updated: June, 2025</p>
+            <p>Last Updated: Nov, 2025</p>
             <p id="timeDisplay">Current Time: 09:56:03 AM</p>
             <button class="go-to-bottom" onclick="scrollToBottom()">Go to Bottom</button>
         </footer>
@@ -484,6 +519,45 @@
             const savedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
         }
+    </script>
+    <script>
+        // Typesetter: types and deletes the three names in sequence
+        (function(){
+            const phrases = ['Akash', 'आकाश', 'আকাশ'];
+            const el = document.getElementById('typer-text');
+            const typingSpeed = 90;
+            const deletingSpeed = 40;
+            const pauseAfter = 1200;
+            let p = 0, i = 0, deleting = false;
+
+            function step(){
+                const current = phrases[p];
+                if(!deleting){
+                    // type
+                    if(i <= current.length){
+                        el.textContent = current.slice(0, i);
+                        i++;
+                        setTimeout(step, typingSpeed);
+                    } else {
+                        deleting = true;
+                        setTimeout(step, pauseAfter);
+                    }
+                } else {
+                    // delete
+                    if(i >= 0){
+                        el.textContent = current.slice(0, i);
+                        i--;
+                        setTimeout(step, deletingSpeed);
+                    } else {
+                        deleting = false;
+                        p = (p + 1) % phrases.length;
+                        i = 0;
+                        setTimeout(step, 300);
+                    }
+                }
+            }
+            setTimeout(step, 400);
+        })();
     </script>
     </body>
 </html>

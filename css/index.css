@@ -195,6 +195,10 @@ a.external::after {
     margin-top: 5px;
 }
 
+.education-item strong:hover {
+    background-color: lightblue
+}
+
 /* Gallery Styles */
 .gallery {
     display: flex;
@@ -467,6 +471,44 @@ section {
     text-decoration: none;
 }
 
+.project-item h3:hover {
+    text-decoration: underline;
+}
+
 .project-item a:hover {
     text-decoration: underline;
 }
+
+/* Tile interaction styles: click to highlight and raise */
+.tile{
+    transition: transform 180ms cubic-bezier(.2,.8,.2,1), box-shadow 180ms ease, border-color 180ms ease;
+    will-change: transform, box-shadow;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.tile--active{
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 18px 44px rgba(96,165,250,0.18), 0 6px 20px rgba(2,6,23,0.10);
+    border: 1px solid rgba(96,165,250,0.95); /* light blue highlight */
+    outline: 3px solid rgba(96,165,250,0.18);
+    z-index: 30; /* raise above neighbors */
+}
+
+.tile.tile--active{ /* higher specificity fallback */
+    outline: 3px solid rgba(96,165,250,0.18);
+}
+
+/* Hover / focus behavior: show the same raised highlight as .tile--active */
+.tile:hover,
+.tile:focus-visible{
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 18px 44px rgba(96,165,250,0.18), 0 6px 20px rgba(2,6,23,0.10);
+    border: 1px solid rgba(96,165,250,0.95);
+    outline: 3px solid rgba(96,165,250,0.18);
+    z-index: 30;
+}
+
+/* Make gallery images visually tile-like when clickable */
+.gallery img.tile{border-radius:8px}
