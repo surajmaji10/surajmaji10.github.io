@@ -25,7 +25,8 @@
 
         <!-- Main Scripts -->
         <script src="./js/index.js"></script>
-        <script src="./js/chatbot.js" defer></script> <!-- ✅ Defer to ensure DOM is loaded before execution -->
+    <script src="./js/chatbot.js" defer></script> <!-- ✅ Defer to ensure DOM is loaded before execution -->
+        <script src="./js/tiles.js" defer></script>
     </head>
 
     <style>
@@ -84,7 +85,7 @@
             <a class="see-me" href="#projects">Projects</a>
             <a class="see-me" href="#reports">Reports</a>
             <a class="see-me" href="#achievements">Achievements</a>
-            <a class="see-me" href="#gallery">Gallery</a>
+            <!-- <a class="see-me" href="#gallery">Gallery</a> -->
             <a class="see-me" href="#contact">Contact</a>
             <a class="hire-me" href="./resume.html">Resume</a>
             <a class="hire-me" href="./hire.html">Hire Me</a>
@@ -211,12 +212,12 @@
             <h2>Study</h2>
             <button class="go-to-top" onclick="scrollToTop()">TOP</button>
             
-            <div class="study-item">
+            <div class="project-item">
                 <h3>Undergraduate</h3>
                 <p>Operating Systems | Databases | Computer Networks | Computer Organization | Digital Logic Design | Discrete Math | Compiler Design | Theory of Computation</p>
             </div>
             
-            <div class="study-item">
+            <div class="project-item">
                 <h3>Graduate</h3>
                 <p>Algorithms | Probability and Statistics | Databases | Computer Architecture | Optimizations | Machine Learning | Cryptography | Distributed Systems</p>
             </div>
@@ -293,21 +294,21 @@
             <h2>Reports</h2>
             <button class="go-to-top" onclick="scrollToTop()">TOP</button>
             <div class="reports-list">
-                <div class="report-item">
+                <div class="project-item">
                     <p class="report-meta">June 2025 | <span>Akash Maji</span></p>
                     <a class="external" href="reports/GroupJoin_Report_Akash.pdf" target="_blank">
                          <img src="images/external.jpg" alt="external link" style="width:20px; vertical-align:middle; margin-left:4px;">
                         <span>Implementing the GroupJoin in DuckDB</span>
                         </a>
                 </div>
-                <div class="report-item">
+                <div class="project-item">
                     <p class="report-meta">December 2024 | <span>Akash Maji &bull; Utkarsh Sharma</span></p>
                     <a class="external" href="reports/DuckDB_AMUS_Join_Report.pdf" target="_blank">
                         <img src="images/external.jpg" alt="external link" style="width:20px; vertical-align:middle; margin-left:4px;">
                         <span>DuckDB AMUS Join: A new Join Operator implementation</span>
                     </a>
                 </div>
-                <div class="report-item">
+                <div class="project-item">
                     <p class="report-meta">April 2025 | <span>Akash Maji &bull; Utkarsh Sharma &bull; Suraj Reddy &bull; Amandeep Nokhwal</span></p>
                     <a class="external" href="reports/CNN_Memory_Profiling_And_Optimisation_Report.pdf" target="_blank">
                         <img src="images/external.jpg" alt="external link" style="width:20px; vertical-align:middle; margin-left:4px;">
@@ -367,21 +368,22 @@
             </div>
         </section>
 
-        <section id="gallery">
+        <!-- <section id="gallery">
             <h2>Gallery</h2>
             <button class="go-to-top" onclick="scrollToTop()">TOP</button>
             <div class="gallery">
-                <!-- <img src="./images/gall-1.jpg" alt="Placeholder Image">
+                <img src="./images/gall-1.jpg" alt="Placeholder Image">
                 <img src="./images/gall-2.jpg" alt="Placeholder Image">
                 <img src="./images/gall-3.jpg" alt="Placeholder Image">
-                <img src="./images/gall-4.png" alt="Placeholder Image"> -->
+                <img src="./images/gall-4.png" alt="Placeholder Image">
             </div>
             <div>
                 <div class="view_more">
                     <a href="./gallery.html">View More</a>
                 </div>
             </div>
-        </section>
+        </section> 
+    -->
 
         <section id="contact">
             <h2>Contact</h2>
@@ -462,13 +464,10 @@
 
 
 
-        
-
-
-
+    
         <footer>
             <p><b>&copy; 2025 Akash Maji. All rights reserved.</b></p>
-            <p>Last Updated: June, 2025</p>
+            <p>Last Updated: Nov, 2025</p>
             <p id="timeDisplay">Current Time: 09:56:03 AM</p>
             <button class="go-to-bottom" onclick="scrollToBottom()">Go to Bottom</button>
         </footer>

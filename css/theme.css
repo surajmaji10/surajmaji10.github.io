@@ -1,0 +1,146 @@
+:root{
+  --bg: #ffffff;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --text: #0f172a;
+  --accent: #2563eb;
+  --accent-2: #60a5fa;
+  --glass: rgba(255,255,255,0.6);
+}
+
+[data-theme="dark"]{
+  --bg: #0b1220;
+  --card: #0f1724;
+  --muted: #94a3b8;
+  --text: #eef2ff;
+  --accent: #60a5fa;
+  --accent-2: #1e3a8a;
+  --glass: rgba(4,6,15,0.6);
+}
+
+/* Global layout refinements */
+html,body{height:100%;}
+body{
+  background-color:var(--bg) !important;
+  color:var(--text) !important;
+  transition: background-color 240ms ease, color 240ms ease;
+  font-family: Inter, Roboto, Arial, sans-serif;
+}
+
+/* Smooth edges for content containers that already exist */
+section, header, footer, .education-item, .display-item, .about-item, .project-item, .report-item{
+  background: linear-gradient(180deg, var(--card), color-mix(in srgb, var(--card) 92%, transparent)) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+  border: 1px solid color-mix(in srgb, var(--card) 60%, black 4%);
+}
+
+/* Underline text in blue on hover for project/report cards */
+.project-item a, .report-item a {
+  text-decoration: none;
+  color: inherit;
+  transition: text-decoration-color 180ms ease, text-decoration-thickness 180ms ease;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+}
+
+.project-item a:hover, .report-item a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-2);
+}
+
+/* Also underline headings inside the card when the card is hovered */
+.project-item:hover h1, .project-item:hover h2, .project-item:hover h3,
+.report-item:hover h1, .report-item:hover h2, .report-item:hover h3 {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-2);
+  text-decoration-thickness: 2px;
+}
+
+/* Links and accents */
+a{color:var(--accent); transition: color 200ms ease;}
+a:hover{color:var(--accent-2); text-decoration: underline;}
+
+/* Navigation improvements */
+nav{gap:8px; padding:12px; border-radius:10px; margin: 10px auto; max-width: 1100px}
+nav a{color:var(--muted) !important; background: transparent; padding:8px 10px; border-radius:8px}
+nav a:hover{background: color-mix(in srgb, var(--accent) 12%, transparent); color:var(--text) !important}
+
+/* Section headings */
+section h2{color:var(--accent-2) !important;}
+
+/* Buttons */
+.go-to-top, .go-to-bottom, button, .hire-me, .see-me{transition: transform 140ms ease, box-shadow 120ms ease}
+.go-to-top:hover, .go-to-bottom:hover, button:hover{transform: translateY(-2px)}
+
+/* Theme toggle floating button */
+#theme-toggle{
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 99999;
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg,var(--card), color-mix(in srgb, var(--card) 90%, transparent));
+  color:var(--text);
+  border: 1px solid color-mix(in srgb, var(--card) 60%, black 6%);
+  box-shadow: 0 8px 20px rgba(2,6,23,0.12);
+  cursor:pointer;
+  transition: transform 160ms ease, background 160ms ease;
+}
+#theme-toggle:hover{transform: translateY(-4px) scale(1.02)}
+
+/* Make sure floating chat icon doesn't overlap theme button on small screens */
+@media (max-width:600px){
+  #theme-toggle{ left: 12px; bottom: 88px }
+}
+
+/* Gentle utility */
+.muted{color:var(--muted)}
+
+/* Improve images */
+img{max-width:100%;height:auto;border-radius:8px}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important}
+}
+
+/* Tile interaction: apply to card-like elements via JS (adds .tile class) */
+.tile{
+  transition: transform 180ms cubic-bezier(.2,.8,.2,1), box-shadow 180ms ease, border-color 180ms ease;
+  will-change: transform, box-shadow;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.tile:active{
+  transform: translateY(-2px);
+}
+
+.tile--active{
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(37,99,235,0.14), 0 6px 18px rgba(2,6,23,0.08);
+  border: 1px solid rgba(96,165,250,0.95);
+  outline: 3px solid rgba(96,165,250,0.16);
+  z-index: 30;
+}
+
+/* Hover and keyboard focus visual (same as active) */
+.tile:hover,
+.tile:focus-visible{
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(37,99,235,0.14), 0 6px 18px rgba(2,6,23,0.08);
+  border: 1px solid rgba(96,165,250,0.95);
+  outline: 3px solid rgba(96,165,250,0.16);
+  z-index: 30;
+}
+
+/* Make images inside gallery behave as tiles visually */
+.gallery img.tile{border-radius:8px}
+
