@@ -9,6 +9,9 @@
         <!-- Favicon -->
         <link rel="icon" href="./images/blue-favicon.ico" type="image/x-icon">
 
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +25,10 @@
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.15.0/flowchart.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+        
+        <!-- Bootstrap JS and Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 
         <!-- Main Scripts -->
         <script src="./js/index.js"></script>
@@ -100,20 +107,52 @@
             <!-- <button class="theme-switcher" onclick="toggleTheme()">Switch Theme</button> -->
         </header>
 
-        <nav>
-            <a class="see-me" href="#home">Home</a>
-            <a class="see-me" href="#about">About</a>
-            <a class="see-me" href="#education">Education</a>
-            <a class="see-me" href="#experience">Experience</a>
-            <a class="see-me" href="#study">Study</a>
-            <a class="see-me" href="#projects">Projects</a>
-            <a class="see-me" href="#reports">Reports</a>
-            <a class="see-me" href="#achievements">Achievements</a>
-            <!-- <a class="see-me" href="#gallery">Gallery</a> -->
-            <a class="see-me" href="#contact">Contact</a>
-            <a class="hire-me" href="./resume.html">Resume</a>
-            <a class="hire-me" href="./hire.html">Hire Me</a>
-            <a class="hire-me" href="./query.html">Enquire</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link see-me" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link see-me" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link see-me" href="#education">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link see-me" href="#experience">Experience</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link see-me" href="#study">Study</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link see-me" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link see-me" href="#reports">Reports</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link see-me" href="#achievements">Achievements</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link see-me" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link hire-me" href="./resume.html">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link hire-me" href="./hire.html">Hire Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link hire-me" href="./query.html">Enquire</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
 
         <section id="home">
@@ -121,7 +160,7 @@
             <div class="home-content">
                 <div class="dp-item">
                     <img src="./images/img.jpg" alt="Profile Picture">
-                    <h3>Hi there! Welcome</h3>
+                    <h4>Hi there! Welcome</h4>
                 </div>
                 <div style="padding-left: 20px;">
                     <div class="quote-item">
@@ -351,11 +390,11 @@
             </div>
         </section>
 
-        <section id="achievements">
+          <section id="achievements">
             <h2>Achievements</h2>
             <button class="go-to-top" onclick="scrollToTop()">TOP</button>
             <div class="education-item">
-                <img src="./images/ocajp-logo.png" alt="OCAJP Logo">
+                <img src="./files/oracle/associate-java.png" alt="OCAJP Logo">
                 <div>
                     <strong>Oracle Certified Associate Java Programmer - I | 1Z0-808</strong>
                     Oracle Corporation | Feb 2020 | Lifetime Validity<br>
@@ -400,26 +439,58 @@
                 </table>
             </div>
 
-
-            <div class="education-item">
+                        <div class="education-item">
                 <img src="./images/rgpv-silver.png" alt="Award1">
                 <div>
                     <strong>RGPV University Silver Medal Award 2025</strong>
-                    Received University Silver Medal for merit in University Finals 2021, from Governor of M.P. Shri Mangubhai Patel.
+                    Received University Silver Medal for merit in University Finals 2021, from Governor of M.P.
                 </div>
                 
             </div>
-
-
-
             
             <div class="education-item">
                 <img src="./images/rgpv-chancellor.png" alt="Award1">
                 <div>
                     <strong>RGPV University Chancellor Scholarship Award 2019</strong>
-                    Received University Scholarship for merit in University Exams 2019, from Governor of M.P. Shri Anandiben Patel.
+                    Received University Scholarship for merit in University Exams 2019, from Governor of M.P.
                 </div>
                 
+            </div>
+
+            <div class="education-item">
+                <img src="./files/oracle/foundations.jpeg" alt="Oracle Cloud Logo">
+                <div>
+                    <strong>Oracle Cloud Infrastructure 2025 Certified Foundations Associate</strong>
+                    Oracle Corporation | Oct 2025 | Cloud Technologies<br>
+                    Demonstrated proficiency in Oracle Cloud Infrastructure core concepts and foundations.<br>
+                    <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=D8974AC1ABE8A550247F4F3D974C866752EE44A8830F2BFE3FC50E20FEC5D646" target="_blank">Verify Credentials &#8599;</a>
+                    &nbsp;&nbsp;
+                    <a href="./files/oracle/eCertificate-foundations.pdf" target="_blank">See Certificate &#8599;</a>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <img src="./files/oracle/associate.png" alt="Oracle Cloud Logo">
+                <div>
+                    <strong>Oracle Cloud Infrastructure 2025 Certified Architect Associate</strong>
+                    Oracle Corporation | Oct 2025 | Cloud Architecture<br>
+                    Validated expertise in designing and implementing OCI cloud solutions.<br>
+                    <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=1D95571D88756F44E737AEBC4B01A3749E0C2B1BD995C0A4C4EAA6AC26345891" target="_blank">Verify Credentials &#8599;</a>
+                    &nbsp;&nbsp;
+                    <a href="./files/oracle/eCertificate-associate.pdf target="_blank">See Certificate &#8599;</a>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <img src="./files/oracle/founations-ai.jpeg" alt="Oracle Cloud Logo">
+                <div>
+                    <strong>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</strong>
+                    Oracle Corporation | Oct 2025 | AI & Machine Learning<br>
+                    Certified in OCI AI services, machine learning fundamentals and applications.<br>
+                    <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=47E415AE37C3299E9651B061D8D8E56DCB1F89EF34C6319F8B3A2F1574DA96B1" target="_blank">Verify Credentials &#8599;</a>
+                    &nbsp;&nbsp;
+                    <a href="./files/oracle/eCertificate-foundations-ai.pdf" target="_blank">See Certificate &#8599;</a>
+                </div>
             </div>
 
         </section>
@@ -539,6 +610,34 @@
             const savedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
         }
+
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        });
     </script>
     <script>
         // Typesetter: types and deletes the three names in sequence
