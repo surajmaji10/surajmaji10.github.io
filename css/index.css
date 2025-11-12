@@ -235,11 +235,10 @@ section h2 {
 
 /* ...existing code... */
 
+
 .display-item {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two columns by default */
     gap: 16px;
     margin-bottom: 10px;
     padding: 10px 0;
@@ -250,14 +249,13 @@ section h2 {
 }
 
 .display-item img {
-    width: 180px;
-    max-width: 90vw;
+    width: 100%;
     height: auto;
     border-radius: 8px;
-    margin: 0 8px;
-    /* object-fit: cover; */
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
     transition: transform 0.2s;
+    justify-self: center;
+    max-width: 100%;
 }
 
 a.external::after {
@@ -270,18 +268,6 @@ a.external::after {
     transform: scale(1.04);
 }
 
-@media (max-width: 600px) {
-    .display-item {
-        flex-direction: column;
-        gap: 10px;
-        padding: 8px 0;
-    }
-    .display-item img {
-        width: 90vw;
-        max-width: 98vw;
-        margin: 0 auto;
-    }
-}
 /* ...existing code... */
 
 
@@ -295,33 +281,28 @@ a.external::after {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.display-item img {
-    display: flex;
-    width: 250px;
-    height: 150px;
-    border-radius: 5%;
-    margin-right: 20px;
-}
+/* removed duplicate .display-item img sizing so grid-based layout controls image size */
 
 /* Education Styles */
 .education-item {
     display: flex;
     gap: 1.5rem;
-    padding: 1.5rem;
-    background-color: #f0f6fa;
+    padding: 1.25rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
     border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    /* margin-bottom: 1.5rem; */
-    transition: transform 0.3s ease;
+    border: 1px solid rgba(30,64,175,0.08); /* soft blue border */
+    box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+    transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
 .education-item:hover {
-    transform: translateY(-2px);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 44px rgba(15,23,42,0.08);
 }
 
 .education-item img {
-    width: 150px;
-    height: 140px;
+    width: 180px;
+    height: 160px;
     border-radius: 5px;
     object-fit: cover;
 }
@@ -349,6 +330,28 @@ a.external::after {
 .education-item strong:hover {
     color: #2563eb;
     transition: color 0.2s ease;
+}
+
+/* Credential link pair: keep inline on desktop, stack on small screens */
+.education-item .cred-links {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Make the anchors inside cred-links wrap to separate lines on small screens */
+@media (max-width: 600px) {
+    .education-item .cred-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px; /* reduce vertical spacing */
+        margin-top: 4px;
+    }
+    .education-item .cred-links a {
+        display: inline-block; /* ensures anchors form their own line */
+        white-space: normal;
+    }
 }
 
 /* Gallery Styles */
@@ -445,6 +448,88 @@ footer {
     margin-right: 20px;
 }
 
+/* Incoming role card (IBM) */
+.incoming-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(180deg, rgba(37,99,235,0.06), rgba(37,99,235,0.03));
+    border: 1px solid rgba(37,99,235,0.12);
+    padding: 10px 14px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(37,99,235,0.06);
+    max-width: 320px;
+}
+
+.incoming-card .incoming-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+}
+
+.incoming-card .incoming-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.incoming-line {
+    font-weight: 400;
+    color: #0f172a; /* slate-900 */
+}
+
+.incoming-sub {
+    font-size: 0.9rem;
+    color: #374151; /* slate-700 */
+}
+
+@media (max-width: 600px) {
+    .incoming-card { max-width: 90%; }
+    .incoming-card .incoming-logo { width: 40px; height: 40px; }
+}
+
+/* Small screen: display-item images should stack and be full width */
+@media (max-width: 600px) {
+    .display-item {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 8px 0;
+    }
+
+    .display-item img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 8px;
+    }
+}
+
+    /* About bio block */
+    .about-bio {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        background: linear-gradient(180deg, #ffffff, #fbfdff);
+        padding: 1rem;
+        border-radius: 10px;
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+    }
+
+    .about-bio .about-bio-col p {
+        margin: 0;
+        color: #334155; /* slate-700 */
+        line-height: 1.6;
+    }
+
+    .about-bio a { color: #2563eb; text-decoration: underline; }
+
+    @media (max-width: 780px) {
+        .about-bio { grid-template-columns: 1fr; }
+    }
+
 .education-item, .experience-item, .achievement-item {
     display: flex;
     align-items: center;
@@ -452,8 +537,8 @@ footer {
 }
 
 .education-item img, .experience-item img {
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
     margin-right: 15px;
 }
 
@@ -586,14 +671,29 @@ section {
 }
 
 .qr-container {  
-    text-align: center; 
-    margin: 0 auto; 
+    text-align: center;
+    margin: 0 auto;
+    max-width: 160px; /* keep the container compact */
+    padding: 6px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 6px 18px rgba(2,6,23,0.04);
 }  
 
 .qr-container img {  
     display: block;  
     margin: 0 auto; 
-}  
+    width: 120px;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+@media (max-width: 480px) {
+    .qr-container { max-width: 120px; padding: 4px; }
+    .qr-container img { width: 90px; }
+    .qr-container p { font-size: 12px; margin-top: 6px; }
+}
 
 .qr-container p {  
     margin-top: 10px;  
@@ -673,3 +773,32 @@ section {
 
 /* Make gallery images visually tile-like when clickable */
 .gallery img.tile{border-radius:8px}
+
+
+@media (max-width: 600px) {
+    .display-item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 8px 0;
+    }
+    .display-item img {
+        width: 90vw;
+        max-width: 98vw;
+        margin: 0 auto;
+    }
+
+    /* Stack education tiles and center image on small screens */
+    .education-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .education-item img {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 10px auto;
+        object-fit: contain;
+    }
+}

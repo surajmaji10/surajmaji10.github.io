@@ -160,7 +160,8 @@
             <div class="home-content">
                 <div class="dp-item">
                     <img src="./images/img.jpg" alt="Profile Picture">
-                    <h4>Hi there! Welcome</h4>
+                    <hr>
+                    <h6 style="text-align: center;">Hi there! Welcome</h6>
                 </div>
                 <div style="padding-left: 20px;">
                     <div class="quote-item">
@@ -172,6 +173,14 @@
                         </div>
                     </div>
                 </div>
+                <!-- Incoming role card -->
+                <div class="incoming-card" role="group" aria-label="Incoming role">
+                    <img src="images/ibm.svg" alt="IBM logo" class="incoming-logo">
+                    <div class="incoming-text">
+                        <div class="incoming-line">Incoming Software Engineer</div>
+                        <div class="incoming-sub">IBM, Bangalore</div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -180,9 +189,9 @@
             <button class="go-to-top" onclick="scrollToTop()">TOP</button>
 
             <div class="education-item" style="display: flex;">
-                       <img src="./images/iisc-logo-2.jpg" alt="University Logo">
-                       <div>
-                         <p>
+                <img src="./images/iisc-logo-2.jpg" alt="University Logo">
+                <div>
+                    <p>
                             I am a <a href="https://www.csa.iisc.ac.in/people/akash-maji/" target="_blank">scholar</a> at <a href="https://iisc.ac.in/">IISc Bangalore</a>
                             pursuing M.Tech in Computer Science Engineering (2024-2026),
                             in the <a href="https://www.csa.iisc.ac.in/">Computer Science and Automation (CSA)</a> department.
@@ -190,13 +199,14 @@
                             doing research in database systems.
                             I am B.Tech CSE graduate from <a href="https://www.rgpv.ac.in/">RGPV Bhopal</a>. I secured AIR 26 in GATE CSE 2024.
                         
-                        </p>
+                    </p>
 
-                        <p>
-                   I have a work experience of about 2.5 years having
-                    worked as a 'Full Stack Java Developer' at <a href="https://www.tcs.com/">TCS</a>. 
-                  I have a keen interest in advanced studies and research.
-                    I love theoretical and applied Computer Science.</p>
+                            <p>
+                        I have a work experience of about 2.5 years having
+                            worked as a 'Full Stack Java Developer' at <a href="https://www.tcs.com/">TCS</a>. 
+                        I have a keen interest in advanced studies and research.
+                            I love theoretical and applied Computer Science.
+                    </p>
                        </div>
                        
                     
@@ -205,6 +215,7 @@
                 <img src="./images/csa-dept.jpg" alt="CSA Dept Pic">
                 <img src="./images/csa-logo.png" alt="CSA Dept Logo">
                 <img src="./images/serc.webp" alt="CDS Dept Pic">
+                <img src="./images/iisc-wall.jpg" alt="IISc Campus Pic">
             </div>
 
         </section>
@@ -216,7 +227,7 @@
                 <img src="./images/iisc-logo.png" alt="University Logo">
                 <div>
                     <strong>Indian Institute of Science, Bangalore</strong>
-                    M.Tech in CSE | 2024-2026 | Full-time<br>
+                    M.Tech in CSE | 2024-2026<br>
                     Grade: 8.0/10.0 CGPA<br>
                     GATE 2024 AIR 26 <br>
                     GATE 2023 AIR 608
@@ -226,10 +237,10 @@
                 <img src="./images/rgpv-logo.png" alt="University Logo">
                 <div>
                     <strong>Rajiv Gandhi Technological University, Bhopal</strong>
-                    B.Tech in CSE | 2017-2021 | Full-time<br>
+                    B.Tech in CSE | 2017-2021<br>
                     Grade: 9.39/10.00 CGPA<br>
                     RGPV Chancellor Award [2019] <br>
-                    Silver🥈Medalist @ B.Tech (Hons.)[2021]
+                    Silver🥈Medalist @ B.Tech (Hons.)
                 </div>
             </div>
             <div class="education-item">
@@ -238,7 +249,7 @@
                     <strong>Krishna Public School, Bhilai</strong>
                     HSC in PCM | 2015-2017 <br>
                     Percent: 95.40%<br>
-                    95.40% in Class-XII CBSE Boards <br>
+                    95.40% in Class-XII CBSE<br>
                     Qualified JEE-Mains(Gen) 2017
                 </div>
             </div>
@@ -248,7 +259,7 @@
                     <strong>Daffodil Public School, Raigarh</strong>
                     Metric in Science | 2005-2015<br>
                     Passed with: 94.50%<br>
-                    94.50% in Class-XII CGBSE Boards<br>
+                    94.50% in Class-XII CGBSE<br>
                     Awarded by Dist. Collector
                 </div>
             </div>
@@ -262,7 +273,7 @@
                 <div>
                     <strong>System Engineer</strong>
                     Tata Consultancy Services | Indore <br>
-                    Aug'21 - May'24 | 2.5yrs | Full-time<br>
+                    Aug'21 - May'24 | Full-time<br>
                     Worked as a System Engineer in TCS @ Digital Profile as a Full Stack Java Web Developer <br>
                     Spring Boot | Oracle DB | Java | JavaScript | Git | JIRA <br>
                     3 x Star of the Month Award
@@ -359,6 +370,40 @@
                 <p>Used 'perf mem' tool to obtain a sampled report of TLB misses at different logical addresses, and identified top N TLB-miss regions and allocated large pages to improve performance.</p>
                 <p><strong>Technologies Used:</strong> C|C++ &bull; Python &bull; Git &bull; Make &bull; VSCode</p>
             </div>
+
+
+            <div class="project-item">
+                <h3>MINI Transformer Model</h3>
+                <p><strong>Systems for Machine Learning Project</strong> |
+                    <a href="https://github.com/akashmaji946/Assignment-02-SysML" target="_blank" rel="noopener">GitHub</a>
+                </p>
+                <p><em>2025 | Bangalore, IN</em></p>
+                <p>
+                    Built from scratch in Python without using deep-learning frameworks. Implements core Transformer components including
+                    positional encoding, scaled dot-product self-attention, multi-head attention, layer normalization, residual connections,
+                    and final output prediction following the original Transformer architecture.
+                </p>
+                <p><strong>Technologies Used:</strong> Python3 • NumPy • Git • VSCode • Shell Scripting</p>
+            </div>
+
+            <div class="project-item">
+                <h3>CNN Memory Profiling</h3>
+                <p><strong>Machine Learning Project</strong> |
+                    <a href="https://github.com/akashmaji946/CNN-Memory-Profiling-And-Optimization-v2" target="_blank" rel="noopener">GitHub</a> |
+                    <a href="https://akashmaj.me/reports/CNN_Memory_Profiling_And_Optimisation_Report.pdf" target="_blank" rel="noopener">Report</a>
+                </p>
+                <p><em>2025 | Bangalore, IN</em></p>
+                <p>
+                    Profiled and optimized CNN inference across RTX 3060, GTX 1050, and Tesla T4 GPUs. Techniques include FP16 inference,
+                    mixed-precision (AMP+AMC), and tiled inference to reduce peak memory and improve throughput. Experiments were performed on
+                    ResNet-20/32/44/56 models trained on CIFAR-10 and Mini-ImageNet, with detailed analysis of memory, latency and accuracy tradeoffs.
+                </p>
+                <p><strong>Technologies Used:</strong> Python3 • PyTorch • CUDA • NVIDIA GPUs • Git • VSCode</p>
+            </div>
+
+
+
+
         </section>
 
         <!-- Attractive Reports Section -->
@@ -397,11 +442,10 @@
                 <img src="./files/oracle/associate-java.png" alt="OCAJP Logo">
                 <div>
                     <strong>Oracle Certified Associate Java Programmer - I | 1Z0-808</strong>
-                    Oracle Corporation | Feb 2020 | Lifetime Validity<br>
+                    Oracle Corp. | Feb 2020 | Lifetime <br>
                     Certified in Java SE 8 Programming from Oracle.<br>
-                    <a href="https://www.credly.com/badges/6616ad47-2676-4e01-893c-20a4642a8b67" target="_blank">Verify Credentials &#8599;</a>
-                    &nbsp;&nbsp;
-                    <a href="https://pdflink.to/akash-maji-ocajp/" target="_blank">See Certificate &#8599;</a>
+                    <span class="cred-links"><a href="https://www.credly.com/badges/6616ad47-2676-4e01-893c-20a4642a8b67" target="_blank">Verify Credentials &#8599;</a>
+                    <a href="https://pdflink.to/akash-maji-ocajp/" target="_blank">See Certificate &#8599;</a></span>
                 </div>
                 
             </div>
@@ -409,11 +453,10 @@
                 <img src="./images/azure-logo.jpg" alt="AZURE Logo">
                 <div>
                     <strong>Microsoft Certified Azure Fundamentals | AZ-900</strong>
-                    Microsoft Corporation | July 2020 | Now Expired <br>
+                    Microsoft Corp. | July 2020 | Expired <br>
                     Certified in basic cloud technology and tools from Microsoft.<br>
-                    <a href="https://www.credly.com/badges/2382975e-d741-4ec9-acca-5d8237bbc515" target="_blank">Verify Credentials &#8599;</a>
-                    &nbsp;&nbsp;
-                    <a href="https://pdflink.to/akash-maji-azure/" target="_blank">See Certificate &#8599;</a>
+                    <span class="cred-links"><a href="https://www.credly.com/badges/2382975e-d741-4ec9-acca-5d8237bbc515" target="_blank">Verify Credentials &#8599;</a>
+                    <a href="https://pdflink.to/akash-maji-azure/" target="_blank">See Certificate &#8599;</a></span>
                 </div>
                 
             </div>
@@ -461,11 +504,10 @@
                 <img src="./files/oracle/foundations.jpeg" alt="Oracle Cloud Logo">
                 <div>
                     <strong>Oracle Cloud Infrastructure 2025 Certified Foundations Associate</strong>
-                    Oracle Corporation | Oct 2025 | Cloud Technologies<br>
+                    Oracle Corp. | Oct 2025 | Cloud <br>
                     Demonstrated proficiency in Oracle Cloud Infrastructure core concepts and foundations.<br>
-                    <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=D8974AC1ABE8A550247F4F3D974C866752EE44A8830F2BFE3FC50E20FEC5D646" target="_blank">Verify Credentials &#8599;</a>
-                    &nbsp;&nbsp;
-                    <a href="./files/oracle/eCertificate-foundations.pdf" target="_blank">See Certificate &#8599;</a>
+                    <span class="cred-links"><a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=D8974AC1ABE8A550247F4F3D974C866752EE44A8830F2BFE3FC50E20FEC5D646" target="_blank">Verify Credentials &#8599;</a>
+                    <a href="./files/oracle/eCertificate-foundations.pdf" target="_blank">See Certificate &#8599;</a></span>
                 </div>
             </div>
 
@@ -473,11 +515,10 @@
                 <img src="./files/oracle/associate.png" alt="Oracle Cloud Logo">
                 <div>
                     <strong>Oracle Cloud Infrastructure 2025 Certified Architect Associate</strong>
-                    Oracle Corporation | Oct 2025 | Cloud Architecture<br>
+                    Oracle Corp. | Oct 2025 | Cloud <br>
                     Validated expertise in designing and implementing OCI cloud solutions.<br>
-                    <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=1D95571D88756F44E737AEBC4B01A3749E0C2B1BD995C0A4C4EAA6AC26345891" target="_blank">Verify Credentials &#8599;</a>
-                    &nbsp;&nbsp;
-                    <a href="./files/oracle/eCertificate-associate.pdf target="_blank">See Certificate &#8599;</a>
+                    <span class="cred-links"><a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=1D95571D88756F44E737AEBC4B01A3749E0C2B1BD995C0A4C4EAA6AC26345891" target="_blank">Verify Credentials &#8599;</a>
+                    <a href="./files/oracle/eCertificate-associate.pdf" target="_blank">See Certificate &#8599;</a></span>
                 </div>
             </div>
 
@@ -485,11 +526,10 @@
                 <img src="./files/oracle/founations-ai.jpeg" alt="Oracle Cloud Logo">
                 <div>
                     <strong>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</strong>
-                    Oracle Corporation | Oct 2025 | AI & Machine Learning<br>
+                    Oracle | Oct 2025 | AIML<br>
                     Certified in OCI AI services, machine learning fundamentals and applications.<br>
-                    <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=47E415AE37C3299E9651B061D8D8E56DCB1F89EF34C6319F8B3A2F1574DA96B1" target="_blank">Verify Credentials &#8599;</a>
-                    &nbsp;&nbsp;
-                    <a href="./files/oracle/eCertificate-foundations-ai.pdf" target="_blank">See Certificate &#8599;</a>
+                    <span class="cred-links"><a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=47E415AE37C3299E9651B061D8D8E56DCB1F89EF34C6319F8B3A2F1574DA96B1" target="_blank">Verify Credentials &#8599;</a>
+                    <a href="./files/oracle/eCertificate-foundations-ai.pdf" target="_blank">See Certificate &#8599;</a></span>
                 </div>
             </div>
 
@@ -615,6 +655,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
+            if (!menuToggle || !navLinks) return; // nothing to do
             
             menuToggle.addEventListener('click', function(e) {
                 e.stopPropagation();
